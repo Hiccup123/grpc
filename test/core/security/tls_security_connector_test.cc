@@ -36,8 +36,8 @@ enum CredReloadResult { FAIL, SUCCESS, UNCHANGED, ASYNC };
 
 void SetKeyMaterials(grpc_tls_key_materials_config* config) {
   const grpc_ssl_pem_key_cert_pair pem_key_pair = {
-      .private_key = test_server1_key,
-      .cert_chain = test_server1_cert,
+      test_server1_key,
+      test_server1_cert,
   };
   const auto* pem_key_pair_ptr = &pem_key_pair;
   grpc_tls_key_materials_config_set_key_materials(config, test_root_cert,

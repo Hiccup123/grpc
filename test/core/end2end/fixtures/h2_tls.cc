@@ -141,8 +141,8 @@ static int client_cred_reload_sync(void* /*config_user_data*/,
     return 0;
   }
   const grpc_ssl_pem_key_cert_pair pem_key_pair = {
-      .private_key = test_server1_key,
-      .cert_chain = test_server1_cert,
+      test_server1_key,
+      test_server1_cert,
   };
   if (arg->key_materials_config->pem_key_cert_pair_list().empty()) {
     const auto* pem_key_pair_ptr = &pem_key_pair;
@@ -164,8 +164,8 @@ static int server_cred_reload_sync(void* /*config_user_data*/,
     return 0;
   }
   const grpc_ssl_pem_key_cert_pair pem_key_pair = {
-      .private_key = test_server1_key,
-      .cert_chain = test_server1_cert,
+      test_server1_key,
+      test_server1_cert,
   };
   GPR_ASSERT(arg != nullptr);
   GPR_ASSERT(arg->key_materials_config != nullptr);
